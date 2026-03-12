@@ -557,6 +557,7 @@ html, body { height: 100%; }
   align-items: flex-start;
   cursor: grab;
   user-select: none;
+  touch-action: none;
   transition: box-shadow .18s, border-color .18s, background .18s;
 }
 .light .task { background: rgba(255,255,255,0.82); }
