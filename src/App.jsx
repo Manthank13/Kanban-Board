@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { DragDropContext, MouseSensor, TouchSensor, useSensors, useSensor } from "@hello-pangea/dnd"
+import { DragDropContext } from "@hello-pangea/dnd"
 import Board from "./components/Board"
 import AddTask from "./components/AddTask"
 import TaskModal from "./components/TaskModal"
@@ -65,17 +65,8 @@ function App() {
     { id: "low",    label: "Low",    cls: "fp-low"  },
   ]
 
-  const sensors = useSensors(
-    useSensor(MouseSensor, {
-      activationConstraint: { distance: 5 }
-    }),
-    useSensor(TouchSensor, {
-      activationConstraint: { delay: 150, tolerance: 8 }
-    })
-  )
-
   return (
-    <DragDropContext onDragEnd={handleDragEnd} sensors={sensors}>
+    <DragDropContext onDragEnd={handleDragEnd}>
       <div className={`app ${darkMode ? "dark" : "light"}`}>
 
         <div className="app-bg" />
